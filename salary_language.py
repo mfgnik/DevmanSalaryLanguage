@@ -34,7 +34,8 @@ def find_by_language_on_hh(language):
 def find_by_language_on_sj(language):
     super_job_key = os.getenv('SECRET_KEY')
     return find_by_language(language, 'https://api.superjob.ru/2.0/vacancies/', {'X-Api-App-Id': super_job_key},
-                                {'town': 4, 'catalogues': 48, 'keyword': language}, 'objects', 'total', get_predict_rub_salary_sj)
+                                {'town': 4, 'catalogues': 48, 'keyword': language}, 'objects', 'total',
+                            get_predict_rub_salary_sj)
 
 
 def find_by_language(language, api_url, headers, params, objects_key, total_key, predict_salary_function):
